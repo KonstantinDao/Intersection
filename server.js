@@ -4,9 +4,11 @@ const mongoClusterUrl = process.env.DATABASE_URL
 const express = require("express")
 const mongoose = require("mongoose")
 const server = express()
-const routes = require('./routes/routes')
+const userRoutes = require('./routes/userRoutes')
+const matchingRoutes = require('./routes/matchingRoutes')
 
-server.use('/api', routes)
+server.use('/api', userRoutes)
+server.use('/api', matchingRoutes)
 
 server.listen(8080, () => {
     console.log(`Server Started at ${8080}`)
