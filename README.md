@@ -1,6 +1,6 @@
 # Backend
 ## At the beginning of backend dev
-- 'npm run autoStart' to start nodemon
+- 'npm run autoStart' to start nodemon and backend server
 - 
 
 ## Helpful links
