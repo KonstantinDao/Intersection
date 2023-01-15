@@ -30,8 +30,8 @@ const deleteMatchingById = async (pId) => {
 
 //Delete all matchings
 const deleteAllMatching = async (req, res) => {
-        const matchingList = await matching.find();
-        matchingList.forEach(currentMatching => deleteMatchingById(currentMatching._id));
+    const matchingList = await matching.find();
+    matchingList.forEach(currentMatching => deleteMatchingById(currentMatching._id));
 }
 
 module.exports = {

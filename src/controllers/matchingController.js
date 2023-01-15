@@ -9,12 +9,6 @@ const addIdToMatchingHistory = async function(pUserId, pMatchingId){
     currentUser.save()
 };
 
-const removeIdFromMatchingHistory = async function(pUserId, pMatchingId){
-    const currentUser = await user.findById(pUserId)
-    const arr = currentUser.matchingHistory.pull(pMatchingId)
-    currentUser.save()
-}
-
 //Post matching
 const createNewMatching = async (req, res) => {
     const matchingData = new matching({

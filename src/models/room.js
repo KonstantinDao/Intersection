@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const RoomSchema = new Schema({
     name: {
         required: true,
         type: String
@@ -10,11 +10,14 @@ const UserSchema = new Schema({
         required: true,
         type: String
     },
-    matchingHistory: [{
+    participants: [{
         type: mongoose.ObjectId,
-        ref: 'Matching'
-    }]
+        ref: 'User'
+    }],
+    numberOfParticipants: {
+        type: Number
+    }
 
 })
 
-module.exports = mongoose.model( 'User', UserSchema);
+module.exports = mongoose.model( 'Room',  RoomSchema);
