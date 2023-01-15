@@ -24,3 +24,11 @@
 ## Helpful background knowledge
 - Mongoose is a ODM (Object Data Modelling) which simplify database access
 
+## Tasks / issues
+- implement matching algorithm in roomService.js
+- refactoring: declare service classes for user and matching endpoint
+- refactor functions to align with conventions
+- refactor routes for better readability
+- api testing for room endpoint
+- fix bug: if more then two matchings are in db and method deleteAllMatching is called, then error appear in console 
+- better error handling especially in cases like above

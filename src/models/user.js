@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
-const Matching = require('./matching');
 
 const UserSchema = new Schema({
     name: {

@@ -4,9 +4,11 @@ const mongoClusterUrl = process.env.DATABASE_URL
 const express = require("express")
 const mongoose = require("mongoose")
 const server = express()
-const userRoutes = require('./routes/userRoutes')
-const matchingRoutes = require('./routes/matchingRoutes')
+const userRoutes = require('./src/routes/userRoutes')
+const matchingRoutes = require('./src/routes/matchingRoutes')
+const roomRoutes = require('./src/routes/roomRoutes')
 
+server.use('/api', roomRoutes)
 server.use('/api', userRoutes)
 server.use('/api', matchingRoutes)
 
