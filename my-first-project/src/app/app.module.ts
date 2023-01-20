@@ -14,8 +14,29 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-//import { ReactiveFormsModule } from '@angular/forms';
+//import { ReactiveFormsModule } from '@angular/forms';import { MatFormFieldModule} from '@angular/material/form-field';
+import { SignupPageComponent } from './signup-page/signup-page.component';
+import { RouterModule, Routes } from "@angular/router";
+import { MenuComponent } from './menu/menu.component';
+import { CreateRoomComponent } from './create-room/create-room.component';
+import { RoomComponent } from './room/room.component';
+import { JoinRoomComponent } from './join-room/join-room.component';
+import { InterestsComponent } from './interests/interests.component';
+import { MatchingHistoryComponent } from './matching-history/matching-history.component';
+import { ChatComponent } from './chat/chat.component';
+import { NatchingResultsComponent } from './natching-results/natching-results.component';
+import { SignupEingabeComponent } from './signup-eingabe/signup-eingabe.component';
 
+const meineRouten: Routes = [
+  {path: '', component: LoginEingabeComponent},
+  {path: 'signup', component: SignupPageComponent},
+  {path: 'login', component: LoginEingabeComponent},
+  {path: 'menu', component: MenuComponent},
+  {path: 'createRoom', component: CreateRoomComponent},
+  {path: 'joinRoom', component: JoinRoomComponent},
+  {path: 'Interests', component: InterestsComponent},
+  {path: 'matchingHistory', component: MatchingHistoryComponent}
+]
 
 @NgModule({
   declarations: [
@@ -23,8 +44,18 @@ import { MatCardModule } from '@angular/material/card';
     HeaderComponent,
     LoginEingabeComponent,
     LoginButtonComponent,
+    SignupPageComponent,
+    MenuComponent,
+    CreateRoomComponent,
+    RoomComponent,
+    JoinRoomComponent,
+    InterestsComponent,
+    ChatComponent,
+    NatchingResultsComponent,
+    SignupEingabeComponent,  
   ],
   imports: [
+    RouterModule.forRoot(meineRouten),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -36,7 +67,11 @@ import { MatCardModule } from '@angular/material/card';
     MatRadioModule,
     MatCardModule,
 //    ReactiveFormsModule
-  ],
+],
+exports: [
+  RouterModule,
+],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
