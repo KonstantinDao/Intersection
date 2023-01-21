@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class JoinRoomComponent {
   joinroom(){
-    document.location.href = "/room";
+    document.location.href = "/interests";
    }
 }
