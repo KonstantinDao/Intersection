@@ -35,7 +35,7 @@ const meineRouten: Routes = [
   {path: 'menu', component: MenuComponent},
   {path: 'createRoom', component: CreateRoomComponent},
   {path: 'joinRoom', component: JoinRoomComponent},
-  {path: 'Interests', component: InterestsComponent},
+  {path: 'interests', component: InterestsComponent},
   {path: 'matchingHistory', component: MatchingHistoryComponent},
   {path: 'room', component: RoomComponent}
 ]
