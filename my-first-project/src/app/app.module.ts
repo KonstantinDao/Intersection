@@ -26,6 +26,7 @@ import { MatchingHistoryComponent } from './matching-history/matching-history.co
 import { ChatComponent } from './chat/chat.component';
 import { NatchingResultsComponent } from './natching-results/natching-results.component';
 import { SignupEingabeComponent } from './signup-eingabe/signup-eingabe.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 const meineRouten: Routes = [
   {path: '', component: LoginEingabeComponent},
@@ -67,6 +68,8 @@ const meineRouten: Routes = [
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
+    MatChipsModule,
+
 //    ReactiveFormsModule
 ],
 exports: [
