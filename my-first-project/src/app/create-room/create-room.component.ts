@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-room.component.css']
 })
 export class CreateRoomComponent {
-
+  submit(){
+    document.location.href = "/room";
+   }
 }
