@@ -36,7 +36,8 @@ const meineRouten: Routes = [
   {path: 'createRoom', component: CreateRoomComponent},
   {path: 'joinRoom', component: JoinRoomComponent},
   {path: 'Interests', component: InterestsComponent},
-  {path: 'matchingHistory', component: MatchingHistoryComponent}
+  {path: 'matchingHistory', component: MatchingHistoryComponent},
+  {path: 'room', component: RoomComponent}
 ]
 
 @NgModule({

@@ -8,7 +8,5 @@ import { Component } from '@angular/core';
 export class LoginButtonComponent {
   login(){
     document.location.href = "/menu";
-    // username = document.getElementById('username').value;
-    //  alert(username);
    }
 }
