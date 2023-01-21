@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./join-room.component.css']
 })
 export class JoinRoomComponent {
-
+  joinroom(){
+    document.location.href = "/room";
+   }
 }
