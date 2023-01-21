@@ -10,4 +10,5 @@ export class SignupEingabeComponent {
     // this.router.navigate(["/menu"]);
     document.location.href = "/menu";
    }
+   
 }

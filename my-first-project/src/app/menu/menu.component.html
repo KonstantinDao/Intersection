@@ -1,22 +1,23 @@
 <a routerLink="/login">back</a>
 
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 
-<div class="center">
+<div class="container">
+    <div class="row align-items-center">
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <div class="d-grid gap-3 mx-auto">
+                <h1>Menu</h1>
+                <p>Create new connections :) </p>
 
-<h1>Menu</h1>
+                <a mat-raised-button (click)="createRoom()" color="primary"> <div class="loginButton">Create Room</div> </a>
 
-<p>Create new connections :) </p>
+                <a mat-raised-button (click)="joinRoom()" color="primary"> <div class="loginButton">Join Room</div> </a>
 
-<br/>
+                <a mat-raised-button (click)="matchingHistory()" color="primary"> <div class="loginButton">Matching History</div> </a>
 
-<a mat-raised-button (click)="createRoom()" color="primary"> <div class="loginButton">createRoom</div> </a>
-
-<br/><br/>
-
-<a mat-raised-button (click)="joinRoom()" color="primary"> <div class="loginButton">joinRoom</div> </a>
-
-<br/><br/>
-
-<a mat-raised-button (click)="matchingHistory()" color="primary"> <div class="loginButton">matchingHistory</div> </a>
-
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

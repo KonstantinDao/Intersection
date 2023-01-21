@@ -54,6 +54,7 @@ const meineRouten: Routes = [
     NatchingResultsComponent,
     SignupEingabeComponent,  
   ],
+
   imports: [
     RouterModule.forRoot(meineRouten),
     BrowserModule,

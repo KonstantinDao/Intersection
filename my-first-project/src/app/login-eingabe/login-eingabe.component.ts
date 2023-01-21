@@ -8,8 +8,6 @@ var username = "";
   styleUrls: ['./login-eingabe.component.css']
 })
 export class LoginEingabeComponent {
-  buttonClicked() {
-    alert('Du stinkst');
-  }
+
 }
 
