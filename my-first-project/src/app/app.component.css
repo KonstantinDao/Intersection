@@ -1,0 +1,9 @@
+.center{
+   display: grid;
+   justify-content: center;
+   align-items: center;
+}
+
+.d-grid {
+   margin-top: 50px;
+}

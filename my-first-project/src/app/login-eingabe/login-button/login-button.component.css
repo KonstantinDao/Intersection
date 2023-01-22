@@ -1,0 +1,24 @@
+section {
+  display: table;
+}
+
+.example-button-row {
+  position: relative;
+  width: 600px;
+  height: 70px;
+  padding-top: 10px;
+}
+
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
