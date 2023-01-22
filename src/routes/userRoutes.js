@@ -5,16 +5,16 @@ const controller = require('../controllers/userConroller')
 router.use(express.json());
 
 //Post user
-router.route('/users').post(controller.createNewUser)
+router.post('/users', controller.createNewUser)
 //Get by ID 
-router.route('/users/:id').get(controller.getUserById)
+router.get('/users/:id', controller.getUserById)
 //Get all user
-router.route('/users').get(controller.getAllUser)
+router.get('/users', controller.getAllUser)
 //Update by ID
-router.route('/users/:id').patch(controller.updateUserById)
+router.patch('/users/:id', controller.updateUserById)
 //Delete by ID
-router.route('/users/:id').delete(controller.deleteUserById)
+router.delete('/users/:id', controller.deleteUserById)
 //Delete all users
-router.route('/users').delete(controller.deleteAllUser)
+router.delete('/users', controller.deleteAllUser)
 
 module.exports = router;

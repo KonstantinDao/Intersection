@@ -24,11 +24,22 @@
 ## Helpful background knowledge
 - Mongoose is a ODM (Object Data Modelling) which simplify database access
 
+## matching requirement
+- call matching algorithm method for room id
+
 ## Tasks / issues
-- implement matching algorithm in roomService.js
-- refactoring: declare service classes for user and matching endpoint
-- refactor functions to align with conventions
-- refactor routes for better readability
+- [ ] implement matching functionality
+    - [x] User object containing selection of interests
+    - [x] get interests object for each user in room and add to array
+    - [ ] call bestMatchForUser algorithm for each group of three
+    - [ ] special case number participants not divisable by three
 - api testing for room endpoint
-- fix bug: if more then two matchings are in db and method deleteAllMatching is called, then error appear in console 
-- better error handling especially in cases like above
+- connection with frontend
+
+### Low priority
+- [ ] fix bug: if more then two matchings are in db and method deleteAllMatching is called, then error appear in console 
+    - use pre hook for dependencies
+- [x] refactoring: declare service classes for user and matching endpoint
+- [ ] refactor functions to align with conventions
+- [x] refactor routes for better readability
+- [ ] implement getAllRoomsByUserId(id)

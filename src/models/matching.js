@@ -1,18 +1,20 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-const MatchingSchema = new Schema({
+const matchingSchema = new Schema({
     name: {
         required: true,
         type: String
     },
     partners: [{
         required: true,
-        type: mongoose.ObjectId,
+        type: mongoose.SchemaTypes.ObjectId,
         ref: 'User'
     }]
     // TODO chat history
 
 })
 
-module.exports = mongoose.model( 'Matching',  MatchingSchema);
+// Compile a model from the schema
+ const Matching = mongoose.model( 'Matching',  matchingSchema);
+ module.exports = Matching;

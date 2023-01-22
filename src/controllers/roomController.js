@@ -7,8 +7,10 @@ const roomService = require('../services/roomService')
 const createNewRoom = async (req, res) => {
     const roomDTO = new room({
         name: req.body.name,
-        password: req.body.password,
-        participants: req.body.participants
+        room_nr: req.body.room_nr,
+        participants: req.body.participants,
+        numberOfParticipants: req.body.numberOfParticipants,
+        matches: req.body.matches
     })
 
     try {
@@ -42,7 +44,7 @@ const getAllRoomsByUserId = async (req, res) => {
 const updateRoomById = async (req, res) => {
     try{
         const updatedRoom = await roomService.updateRoomById(req.params.id, req.body);
-        res.json(updatedMatching)
+        res.json(updatedRoom)
    } catch (error) {
        res.status(400).json({message: error.message})
    }
@@ -71,7 +73,7 @@ const deleteAllRooms = async (req, res) => {
 
 const calculateMatchings = async (req, res) => {
     try{
-        const listOfMatchings = roomService.calculateMatchings();
+        const listOfMatchings = roomService.calculateMatchings(req.params.id);
         res.status(200).json(listOfMatchings)
     } catch(error){
         res.status(500).json({message: error.message})
