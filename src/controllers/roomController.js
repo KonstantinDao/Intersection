@@ -73,7 +73,7 @@ const deleteAllRooms = async (req, res) => {
 
 const calculateMatchings = async (req, res) => {
     try{
-        const listOfMatchings = roomService.calculateMatchings(req.params.id);
+        const listOfMatchings = await roomService.calculateMatchings(req.params.id);
         res.status(200).json(listOfMatchings)
     } catch(error){
         res.status(500).json({message: error.message})

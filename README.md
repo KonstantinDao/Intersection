@@ -28,17 +28,17 @@
 - call matching algorithm method for room id
 
 ## Tasks / issues
-- [ ] implement matching functionality
+- [x] implement matching functionality
     - [x] User object containing selection of interests
     - [x] get interests object for each user in room and add to array
-    - [ ] call bestMatchForUser algorithm for each group of three
-    - [ ] special case number participants not divisable by three
-- api testing for room endpoint
-- connection with frontend
+    - [x] call bestMatchForUser algorithm for each group of three
+    - [x] special case leftover participants
+- [ ] api testing for room endpoint
+- [ ] connection with frontend
 
 ### Low priority
 - [ ] fix bug: if more then two matchings are in db and method deleteAllMatching is called, then error appear in console 
-    - use pre hook for dependencies
+    - [ ] use pre hook for dependencies
 - [x] refactoring: declare service classes for user and matching endpoint
 - [ ] refactor functions to align with conventions
 - [x] refactor routes for better readability

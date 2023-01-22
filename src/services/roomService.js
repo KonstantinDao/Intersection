@@ -1,6 +1,8 @@
 const room = require('../models/room');
+const matching = require('../models/matching');
 const user = require('../models/user');
 const userService = require('../services/userService')
+const matchingService = require('../services/matchingService')
 
 
 const createNewRoom = async (pRoom) => {
@@ -11,7 +13,8 @@ const createNewRoom = async (pRoom) => {
 const getRoomById = async (pId) => {
     const currentRoom = await room.findById(pId).populate({
         path: "participants",
-        model: "User"
+        model: "User",
+        select: {'_id': 1, 'interests': 1},
     });
     return currentRoom;
 }
@@ -44,37 +47,68 @@ const deleteAllRooms = async () => {
     await room.deleteMany();
 }
 
-function bestMatchForUser(collection,user) {
-    return collection.sort(function(a,b){
-      var c=0,d=0,p;
-      for (p in user) {
-        if (user.hasOwnProperty(p)) {
-          c+=Number((a[p]||0)&&a[p]===user[p]);
-          d+=Number((b[p]||0)&&b[p]===user[p]);
-        }  
-      }
-      return (d<c)?-1:1;return 0;
-    })[0];
+function bestMatchForUser(collection,userEntry) {
+    const sortedArray = collection.sort(function(a,b){
+        let interestsA = a.interests;
+        let interestsB = b.interests;
+        var c=0,d=0,p;
+        for (p in userEntry.interests) {
+            c+=Number(interestsA.includes(p));
+            d+=Number(interestsB.includes(p));
+        }
+        return (d<c)?-1:1;
+    });
+
+    return sortedArray.splice(0,2);
   }
+
+  function arrayRemove(arr, value) { 
+    
+    return arr.filter(function(ele){ 
+        return ele != value; 
+    });
+}
 
 const calculateMatchings = async (pId) => {
     const currentRoom = await getRoomById(pId);
-    const userList = currentRoom.participants;
-    const userWithInterests = new Map();
+    let userList = currentRoom.participants;
 
     // matching algorithm
     for(const user of userList){
-        userWithInterests.set(user.id, user.interests)
-
-        if(userWithInterests.get(user.id).includes('sport')){
-            console.log(1)
-        }else{
-            console.log(0)
+        // remaining userList smaller then 2
+        if (userList.length <= 4) {
+            const matches = [];
+            for(const u of userList){
+                matches.push(u.id);
+            }
+            console.log(matches)
+            const matchingData = new matching({
+                name: currentRoom.name,
+                partners: matches
+            });
+            console.log(await matchingService.createNewMatching(matchingData));
+            return;
         }
-    }
+        userList = arrayRemove(userList, user)
+        let result = bestMatchForUser(userList, user);
+        result.push(user);
 
-   
-    console.log(userWithInterests)
+        const matches = [];
+        for(const u of result){
+            matches.push(u.id);
+        }
+        console.log(matches)
+        
+        // save matching
+        const matchingData = new matching({
+            name: currentRoom.name,
+            partners: matches
+        });
+        console.log(await matchingService.createNewMatching(matchingData));
+
+        userList = arrayRemove(userList, result[0])
+        userList = arrayRemove(userList, result[1])
+    }
 }
 
 module.exports = {
