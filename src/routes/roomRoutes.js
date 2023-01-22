@@ -15,5 +15,6 @@ router.patch('/rooms/:id', controller.updateRoomById)
 router.delete('/rooms/:id', controller.deleteRoomById)
 //for admin
 router.delete('/rooms', controller.deleteAllRooms)
+router.get('/rooms/matching/:id', controller.calculateMatchings)
 
 module.exports = router;

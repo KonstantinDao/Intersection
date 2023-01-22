@@ -1,16 +1,18 @@
 // business logic
 
 const user = require('../models/user');
+const userService = require('../services/userService')
 
 const createNewUser = async (req, res) => {
     const userData = new user({
         name: req.body.name,
         password: req.body.password,
+        interests: req.body.interests,
         matchingHistory: req.body.matchingHistory
     })
 
     try {
-        const newUser = await userData.save()
+        const newUser = await userService.createNewUser(userData)
         res.status(200).json(newUser)
     } catch (error) {
         res.status(400).json({message: error.message})
@@ -19,7 +21,7 @@ const createNewUser = async (req, res) => {
 
 const getUserById = async (req, res) => {
     try{
-        const currentUser = await user.findById(req.params.id)
+        const currentUser = await userService.getUserById(req.params.id)
         res.json(currentUser)
     } 
     catch (error) {
@@ -39,12 +41,11 @@ const getAllUser = async (req, res) => {
 
 const updateUserById = async (req, res) => {
     try{
-        const id = req.params.id
-        const updatedData = req.body
-        const options = { new: true }
+        const id = req.params.id;
+        const updatedData = req.body;
 
-        const updatedUser = await user.findByIdAndUpdate(id, updatedData, options)
-        res.json(updatedUser)
+        const updatedUser = await userService.updateUserById(id, updatedData);
+        res.json(updatedUser);
    } 
    catch (error) {
        res.status(400).json({message: error.message})
@@ -53,7 +54,7 @@ const updateUserById = async (req, res) => {
 
 const deleteUserById = async (req, res) => {
     try{
-        const deletedUser = await user.findByIdAndDelete(req.params.id)
+        const deletedUser = await userService.deleteUserById(req.params.id)
         res.send(`User ${deletedUser.name} with id ${deletedUser.id} has been deleted`)
    } 
    catch (error) {
@@ -63,7 +64,7 @@ const deleteUserById = async (req, res) => {
 
 const deleteAllUser = async (req, res) => {
     try{
-        await user.deleteMany()
+        await userService.deleteAllUser();
         res.json({message: "success"})
     } 
     catch (error){

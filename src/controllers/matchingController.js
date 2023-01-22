@@ -17,10 +17,7 @@ const createNewMatching = async (req, res) => {
     })
 
     try {
-        const newMatching = await matchingData.save();
-        const userListOfMatching = newMatching.partners
-        userListOfMatching.forEach(userObjectId => addIdToMatchingHistory(userObjectId.toHexString(), newMatching.id));
-        
+        const newMatching = await matchingService.createNewMatching(matchingData);
         res.status(200).json(newMatching)
     } catch (error) {
         res.status(400).json({message: error.message})
@@ -30,7 +27,7 @@ const createNewMatching = async (req, res) => {
 //Get by ID 
 const getMatchingById = async (req, res) => {
     try{
-        const currentMatching = await matching.findById(req.params.id)
+        const currentMatching = await matchingService.getMatchingById(req.params.id)
         res.json(currentMatching)
    } catch (error) {
        res.status(500).json({message: error.message})
@@ -40,7 +37,7 @@ const getMatchingById = async (req, res) => {
 //Get all matchings
 const getAllMatching = async (req, res) => {
     try{
-         const matchingList = await matching.find()
+         const matchingList = await matchingService.getAllMatching();
          res.json(matchingList)
     } catch (error) {
         res.status(500).json({message: error.message})
@@ -52,9 +49,8 @@ const updateMatchingById = async (req, res) => {
     try{
         const id = req.params.id;
         const updatedData = req.body;
-        const options = { new: true };
 
-        const updatedMatching = await matching.findByIdAndUpdate(id, updatedData, options)
+        const updatedMatching = await matchingService.updateMatchingById(id, updatedData);
         res.json(updatedMatching)
    } catch (error) {
        res.status(400).json({message: error.message})
@@ -80,10 +76,6 @@ const deleteAllMatching = async (req, res) => {
     } catch (error) {
         res.status(500).json({message: error.message})
     }
-        
-
-
-    
 }
 
 module.exports = {

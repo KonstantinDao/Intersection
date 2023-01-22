@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-const UserSchema = new Schema({
+const userSchema = new Schema({
     name: {
         required: true,
         type: String
@@ -10,11 +10,15 @@ const UserSchema = new Schema({
         required: true,
         type: String
     },
+    interests: [{
+        type: String
+    }],
     matchingHistory: [{
-        type: mongoose.ObjectId,
+        type: mongoose.SchemaTypes.ObjectId,
         ref: 'Matching'
     }]
-
 })
 
-module.exports = mongoose.model( 'User', UserSchema);
+// Compile a model from the schema
+const User = mongoose.model('User', userSchema);
+module.exports = User;
