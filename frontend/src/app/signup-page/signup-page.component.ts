@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup-page.component.css']
 })
 export class SignupPageComponent {
-
+  fehler(){
+    document.getElementsByTagName('p')[0].innerHTML = "Something didn't work. Please try again.";
+  }
 }
