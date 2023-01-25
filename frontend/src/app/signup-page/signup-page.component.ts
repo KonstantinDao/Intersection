@@ -7,6 +7,7 @@ import { User } from './User';
   templateUrl: './signup-page.component.html',
   styleUrls: ['./signup-page.component.css']
 })
+
 export class SignupPageComponent {
 
 
