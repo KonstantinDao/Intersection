@@ -19,13 +19,11 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { RouterModule, Routes } from "@angular/router";
 import { MenuComponent } from './menu/menu.component';
 import { CreateRoomComponent } from './create-room/create-room.component';
-import { RoomComponent } from './room/room.component';
 import { JoinRoomComponent } from './join-room/join-room.component';
 import { InterestsComponent } from './interests/interests.component';
 import { MatchingHistoryComponent } from './matching-history/matching-history.component';
 import { ChatComponent } from './chat/chat.component';
 import { NatchingResultsComponent } from './natching-results/natching-results.component';
-import { SignupEingabeComponent } from './signup-eingabe/signup-eingabe.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -38,7 +36,6 @@ const meineRouten: Routes = [
   {path: 'joinRoom', component: JoinRoomComponent},
   {path: 'interests', component: InterestsComponent},
   {path: 'matchingHistory', component: MatchingHistoryComponent},
-  {path: 'room', component: RoomComponent},
   {path: 'natchingresults', component: NatchingResultsComponent}
 ]
 
@@ -51,12 +48,10 @@ const meineRouten: Routes = [
     SignupPageComponent,
     MenuComponent,
     CreateRoomComponent,
-    RoomComponent,
     JoinRoomComponent,
     InterestsComponent,
     ChatComponent,
     NatchingResultsComponent,
-    SignupEingabeComponent,  
   ],
 
   imports: [

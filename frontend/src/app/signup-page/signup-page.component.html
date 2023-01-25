@@ -7,7 +7,7 @@
             <p>Enter an username and passwort to create an account </p>
             <input class="form-control" color="warn" type="text" placeholder="username" id="username">
             <input class="form-control" color="primary" type="text" placeholder="password" id="password">
-            <app-signup-eingabe></app-signup-eingabe>   
+            <button mat-raised-button color="primary" type="button" (click)="signup()" >Signup</button>
             <h2> Don't have an account?
               <a routerLink="/login">Log in </a>
             </h2>       
