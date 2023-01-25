@@ -28,6 +28,7 @@ import { ChatComponent } from './chat/chat.component';
 import { NatchingResultsComponent } from './natching-results/natching-results.component';
 import { SignupEingabeComponent } from './signup-eingabe/signup-eingabe.component';
 import {MatChipsModule} from '@angular/material/chips';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const meineRouten: Routes = [
   {path: '', component: LoginEingabeComponent},
@@ -38,7 +39,8 @@ const meineRouten: Routes = [
   {path: 'joinRoom', component: JoinRoomComponent},
   {path: 'interests', component: InterestsComponent},
   {path: 'matchingHistory', component: MatchingHistoryComponent},
-  {path: 'room', component: RoomComponent}
+  {path: 'room', component: RoomComponent},
+  {path: 'natchingresults', component: NatchingResultsComponent}
 ]
 
 @NgModule({
@@ -73,6 +75,7 @@ const meineRouten: Routes = [
     MatRadioModule,
     MatCardModule,
     MatChipsModule,
+    FormsModule, ReactiveFormsModule,
 
 //    ReactiveFormsModule
 ],

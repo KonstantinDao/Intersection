@@ -9,6 +9,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./signup-page.component.css']
 })
 export class SignupPageComponent {
+  fehler(){
+    document.getElementsByTagName('p')[0].innerHTML = "Something didn't work. Please try again.";
+  }
+
 
   readonly ROOT_URL = 'http://localhost:8080/api'
 
@@ -38,6 +42,5 @@ export class SignupPageComponent {
     this.newUser = this.http.post(this.ROOT_URL + '/users', data)
   
   }
-
 
 }

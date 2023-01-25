@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+//  const user = require('../../../../../src/models/user');
+//  const userService = require('../../../../../src/services/userService');
 
 @Component({
   selector: 'login-button',
@@ -6,7 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-button.component.css']
 })
 export class LoginButtonComponent {
-  login(){
+  async login(){
     document.location.href = "/menu";
-   }
+    var username = (<HTMLInputElement>document.getElementById('username')).value;
+    var password = (<HTMLInputElement>document.getElementById('password')).value;
+    alert(username + "  "+password);
+
+  //     const userData = new user({
+  //     name: username,
+  //     password: password,
+  //     interests: []
+  // });
+  // console.log(await userService.createNewUser(userData));
+    }
 }

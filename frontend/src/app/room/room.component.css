@@ -1,0 +1,41 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+section {
+    display: table;
+  }
+  
+  .example-button-row {
+    position: relative;
+    width: 600px;
+    height: 70px;
+    padding-top: 10px;
+  }
+  
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+  #p1 {
+    font-size : 30px;
+   margin-top : 40px;
+   font-weight : 400;
+  }
+
+  #p2 {
+    font-size : 30px;
+   margin-top : 10px;
+   font-weight : 400;
+  }
