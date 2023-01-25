@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Room } from './Room';
 
 @Component({
   selector: 'app-create-room',
@@ -6,29 +8,38 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-room.component.css']
 })
 export class CreateRoomComponent {
-  submit(){
-    var roomname = (<HTMLInputElement>document.getElementById('roomName')).value;
 
-    var x = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+  room: any;
 
-    // document.getElementsByTagName('p')[0].innerHTML = "";
-    // document.getElementsByTagName('p')[1].innerHTML = "Room-Name:  "+ roomname;
-    document.getElementsByTagName('p')[2].innerHTML = "Room-Nr:  " + x;
+  readonly ROOT_URL = 'http://localhost:8080/api';
 
-    // var element =  <HTMLInputElement>document.getElementById('s1');
-    // var parent = <HTMLInputElement>element.parentNode;
-    //     parent.removeChild(element);
-    
-    // var element =  <HTMLInputElement>document.getElementById('input');
-    // var parent = <HTMLInputElement>element.parentNode;
-    //     parent.removeChild(element);
+  constructor(private http: HttpClient) {}
 
-    // document.location.href = "/room";   
-   
+  createRoom(){
+    var pRoomNr = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+
+    document.getElementsByTagName('p')[2].innerHTML = "Room-Nr:  " + pRoomNr;
+
+    var pRoomName = (<HTMLInputElement>document.getElementById('roomName')).value;
+
+    const data: Room = {
+      id: '',
+      name: pRoomName,
+      room_nr: pRoomNr,
+      participants: [],
+      numberOfParticipants: 0,
+      matches: []
+    }
+
+    this.http.post(this.ROOT_URL + '/rooms', data).subscribe(data => {
+      console.log(data);
+      this.room = data;
+    })
+  
 
    }
 
-   startmatching(){
-    document.location.href = "/natchingresults"; 
-   }
+  startmatching(){
+    document.location.href = "/matchingresults"; 
+  }
 }

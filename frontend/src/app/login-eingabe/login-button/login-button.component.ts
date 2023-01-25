@@ -20,5 +20,11 @@ export class LoginButtonComponent {
   //     interests: []
   // });
   // console.log(await userService.createNewUser(userData));
+
+
+    }
+
+    fehler(){
+      document.getElementsByTagName('p')[0].innerHTML = "Something didn't work. Please try again.";
     }
 }

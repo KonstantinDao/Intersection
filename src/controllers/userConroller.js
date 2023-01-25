@@ -13,7 +13,7 @@ const createNewUser = async (req, res) => {
 
     try {
         const newUser = await userService.createNewUser(userData)
-        res.status(200).json(newUser)
+        res.status(200).json(true)
     } catch (error) {
         res.status(400).json({message: error.message})
     }

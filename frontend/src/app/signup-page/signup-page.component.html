@@ -14,12 +14,12 @@
 
               <button (click)="createUser()" class="btn btn-primary">CreateUser</button>
 
-              {{ newUser | async | json}}
- -->
+              {{ newUser | async | json}} -->
+
               <input class="form-control" color="warn" type="text" placeholder="username" id="username">
               <input class="form-control" color="primary" type="password" placeholder="password" id="password">
 
-              <button mat-raised-button class="btn btn-primary" color="primary" type="button" (click)="createUser()">Sign Up</button>
+              <button mat-raised-button class="btn btn-primary" color="primary" type="button" (click)="createUser()" >Sign Up</button>
             <h2> Don't have an account?
               <a routerLink="/login">Log in </a>
             </h2>       

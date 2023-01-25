@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { User } from './User';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-signup-page',
@@ -9,16 +8,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./signup-page.component.css']
 })
 export class SignupPageComponent {
-  fehler(){
-    document.getElementsByTagName('p')[0].innerHTML = "Something didn't work. Please try again.";
-  }
 
 
   readonly ROOT_URL = 'http://localhost:8080/api'
 
-
   users: any
-  newUser: any
+  user: any
 
   constructor(private http: HttpClient) {}
 
@@ -27,7 +22,7 @@ export class SignupPageComponent {
   }
 
   createUser() {
-    document.location.href = "/menu";
+
     var username = (<HTMLInputElement>document.getElementById('username')).value;
     var password = (<HTMLInputElement>document.getElementById('password')).value;
 
@@ -39,8 +34,13 @@ export class SignupPageComponent {
       matchingHistory: []
     }
 
-    this.newUser = this.http.post(this.ROOT_URL + '/users', data)
-  
+    this.http.post(this.ROOT_URL + '/users', data).subscribe(data => {
+      console.log(data);
+      this.user = data;
+    })
+    document.location.href = "/menu";
   }
+
+
 
 }
