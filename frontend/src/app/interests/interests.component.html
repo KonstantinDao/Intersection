@@ -1,4 +1,50 @@
-<mat-chip-listbox aria-label="Intrest Selection">
+<div class="container">
+    <div class="row align-items-center">
+      <div class="row justify-content-center">
+        <div class="col-2 col-sm-3 col-md-4 col-lg-4 col-xl-6">
+          <div class="d-grid gap-0 mx-auto">
+            <h1>Select your Interests</h1>
+            <p>At least three Interests have to be selected. </p>
+
+            <mat-form-field>
+            <mat-label>Interests</mat-label>
+            <mat-select [formControl]="toppingsControl" multiple>
+
+                <mat-select-trigger>
+                <mat-chip-set>
+                    <mat-chip *ngFor="let topping of toppingsControl.value"
+                    [removable]="true" (removed)="onToppingRemoved(topping)">
+                    {{ topping }}
+                    <mat-icon matChipRemove>x</mat-icon>
+                    </mat-chip>
+                </mat-chip-set>
+                </mat-select-trigger>
+
+                <mat-option *ngFor="let topping of toppingList" [value]="topping" >{{topping}}</mat-option>
+                
+            </mat-select>
+            </mat-form-field>
+
+
+            <br/>
+            {{ toppingsControl.value | json }}
+            <button mat-raised-button color="primary" type="button" (click)="sendDoc(toppingsControl.value)">Confirm</button>
+
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <mat-chip-listbox aria-label="Intrest Selection">
     <mat-chip-option>Sackhüpfen</mat-chip-option>
     <mat-chip-option>Paddeln</mat-chip-option>
     <mat-chip-option color="accent" selected>Accent</mat-chip-option>
@@ -25,4 +71,4 @@
   </mat-form-field>
   
   <br/>
-  {{ toppingsControl.value | json }}
+  {{ toppingsControl.value | json }} -->
