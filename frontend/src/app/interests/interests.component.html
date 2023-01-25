@@ -21,14 +21,14 @@
                 </mat-select-trigger>
 
                 <mat-option *ngFor="let topping of toppingList" [value]="topping" >{{topping}}</mat-option>
-                <!-- <mat-option *ngFor="let topping of toppingList" [value]="topping" [disabled]="isOptionDisabled(topping.id)">{{topping}}</mat-option> -->
+                
             </mat-select>
             </mat-form-field>
 
 
             <br/>
-            <!-- {{ toppingsControl.value | json }} -->
-            <button mat-raised-button color="primary" type="button" (click)="sendDoc()">Confirm</button>
+            {{ toppingsControl.value | json }}
+            <button mat-raised-button color="primary" type="button" (click)="sendDoc(toppingsControl.value)">Confirm</button>
 
         </div>
     </div>

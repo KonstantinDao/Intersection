@@ -39,7 +39,8 @@ import {FormControl} from '@angular/forms';
 
 export class InterestsComponent {
   toppingsControl = new FormControl<any[]>([]);
-  toppingList: string[] = ['Football', 'Volleyball', 'Walking', 'Politics', 'Badminton', 'Poetry', 'Shopping', 'Sport', 'Photography', 'Gym', 'Yoga', 'Movies', 'Art', 'Coffee', 'K-Pop', 'Tea', 'Material Arts', 'Marvel', 'Big-Band', 'Hiking', 'Bar-Hopping', 'Books', 'Among Us', 'Coocking', 'Stocks & ETFs', '',];
+  toppingList: string[] = ['Football', 'Volleyball', 'Walking', 'Politics', 'Badminton', 'Poetry', 'Shopping', 'Sport', 'Photography', 'Gym', 'Yoga', 'Movies', 'Art', 'Coffee', 'K-Pop', 'Tea', 'Material Arts', 'Marvel', 'Big-Band', 'Hiking', 'Bar-Hopping', 'Books', 'Among Us', 'Coocking', 'Stocks & ETFs', 'Fridays for future', 'Social media','Festivals',
+  'Cars','Music', 'Outdoor',];
 
 
   onToppingRemoved(topping: string) {
@@ -48,8 +49,9 @@ export class InterestsComponent {
     this.toppingsControl.setValue(toppings); // To trigger change detection
   }
 
-  sendDoc(){
-
+  sendDoc(interests: any){
+    // let interests =  {toppingsControl.value} ;
+    console.log(interests);
   }
 
   // isOptionDisabled(opt: any): boolean {
