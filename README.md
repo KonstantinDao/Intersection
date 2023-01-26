@@ -33,8 +33,10 @@
     - [x] get interests object for each user in room and add to array
     - [x] call bestMatchForUser algorithm for each group of three
     - [x] special case leftover participants
-- [ ] api testing for room endpoint
 - [ ] connection with frontend
+    - [x] waiting-room
+    - [ ] calculate matching button functionality
+    - [ ] show matching results
 
 ### Low priority
 - [ ] fix bug: if more then two matchings are in db and method deleteAllMatching is called, then error appear in console 
