@@ -31,7 +31,7 @@ export class WaitingRoomComponent {
        console.log(count);
         this.getUser().subscribe(updatedUser =>{
           console.log(userZero)
-          console.log(updatedUser)
+          console.log(updatedUser.name)
           if(!this.arraysEqual(userZero.matchingHistory, updatedUser.matchingHistory)){
            document.location.href = `/matchingresults/${this.id}`;
          }
@@ -59,10 +59,6 @@ export class WaitingRoomComponent {
   
   getUser(): Observable<User> {
     return this.http.get<User>(this.ROOT_URL + `/users/${this.id}`)
-  }
-
-  checkDB() {
-    const userData = this.getUser();
   }
 
 

@@ -35,8 +35,10 @@
     - [x] special case leftover participants
 - [ ] connection with frontend
     - [x] waiting-room
-    - [ ] calculate matching button functionality
-    - [ ] show matching results
+    - [ ] calculate matching button functionality 
+    - [ ] in backend update matchingHistory from all users ()
+    - [ ] show matching results (Anna)
+    - [ ] backend user name unique
 
 ### Low priority
 - [ ] fix bug: if more then two matchings are in db and method deleteAllMatching is called, then error appear in console 
@@ -45,3 +47,4 @@
 - [ ] refactor functions to align with conventions
 - [x] refactor routes for better readability
 - [ ] implement getAllRoomsByUserId(id)
+- [ ] room_nr should be unique and generated from backend

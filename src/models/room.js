@@ -8,7 +8,7 @@ const RoomSchema = new Schema({
     },
     room_nr: {
         required: true,
-        type: String
+        type: String,
     },
     participants: [{
         type: mongoose.SchemaTypes.ObjectId,

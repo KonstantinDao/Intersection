@@ -27,19 +27,21 @@ import { NatchingResultsComponent } from './natching-results/natching-results.co
 import {MatChipsModule} from '@angular/material/chips';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { WaitingRoomComponent } from './waiting-room/waiting-room.component';
+import { CalculateMatchingComponent } from './calculate-matching/calculate-matching.component';
 
 const meineRouten: Routes = [
   {path: '', component: LoginEingabeComponent},
   {path: 'signup', component: SignupPageComponent},
   {path: 'login', component: LoginEingabeComponent},
   {path: 'menu/:id', component: MenuComponent},
-  {path: 'createRoom/:id', component: CreateRoomComponent},
+  {path: 'createRoom', component: CreateRoomComponent},
   {path: 'joinRoom/:id', component: JoinRoomComponent},
   {path: 'interests/:id', component: InterestsComponent},
   {path: 'matchingHistory/:id', component: MatchingHistoryComponent},
   // TODO: rename
   {path: 'matchingresults/:id', component: NatchingResultsComponent},
-  {path: 'waitingRoom/:id', component: WaitingRoomComponent}
+  {path: 'waitingRoom/:id', component: WaitingRoomComponent},
+  {path: 'calculateMatching/:roomId', component: CalculateMatchingComponent}
 ]
 
 @NgModule({
@@ -56,6 +58,7 @@ const meineRouten: Routes = [
     ChatComponent,
     NatchingResultsComponent,
     WaitingRoomComponent,
+    CalculateMatchingComponent,
   ],
 
   imports: [

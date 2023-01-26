@@ -8,6 +8,7 @@ router.use(express.json());
 router.post('/rooms', controller.createNewRoom)
 //Get by ID 
 router.get('/rooms/:id', controller.getRoomById)
+router.get('/roomByNumber/:room_nr', controller.getRoomByNumber)
 router.get('/rooms/:userId', controller.getAllRoomsByUserId)
 //Update by ID
 router.patch('/rooms/:id', controller.updateRoomById)

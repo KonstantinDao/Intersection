@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Room } from './Room';
+import { ActivatedRoute } from '@angular/router';
+import { Room } from '../models/Room';
 
 @Component({
   selector: 'app-create-room',
@@ -13,12 +14,10 @@ export class CreateRoomComponent {
 
   readonly ROOT_URL = 'http://localhost:8080/api';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   createRoom(){
     var pRoomNr = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
-
-    document.getElementsByTagName('p')[2].innerHTML = "Room-Nr:  " + pRoomNr;
 
     var pRoomName = (<HTMLInputElement>document.getElementById('roomName')).value;
 
@@ -34,12 +33,11 @@ export class CreateRoomComponent {
     this.http.post(this.ROOT_URL + '/rooms', data).subscribe(data => {
       console.log(data);
       this.room = data;
+      document.location.href = `/calculateMatching/${this.room._id}`;
     })
   
 
    }
 
-  startmatching(){
-    document.location.href = "/matchingresults"; 
-  }
+  
 }

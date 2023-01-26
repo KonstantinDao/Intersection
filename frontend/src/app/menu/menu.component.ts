@@ -22,7 +22,7 @@ export class MenuComponent {
   }
 
   createRoom(){
-    document.location.href = `/createRoom/${this.id}`;
+    document.location.href = `/createRoom`;
   }
   joinRoom(){
     document.location.href = `/joinRoom/${this.id}`;

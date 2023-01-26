@@ -8,6 +8,7 @@ router.use(express.json());
 router.post('/users', controller.createNewUser)
 //Get by ID 
 router.get('/users/:id', controller.getUserById)
+router.get('/usersByName/:name', controller.getUserByName)
 //Get all user
 router.get('/users', controller.getAllUser)
 //Update by ID

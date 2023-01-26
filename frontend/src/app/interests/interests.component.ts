@@ -47,7 +47,7 @@ export class InterestsComponent {
       console.log(data);
       this.user = data;
     })
-    document.location.href = `/interests/${this.id}`;
+    document.location.href = `/waitingRoom/${this.id}`;
   }
 
   private removeFirst<T>(array: T[], toRemove: T): void {

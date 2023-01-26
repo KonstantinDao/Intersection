@@ -29,6 +29,17 @@ const getUserById = async (req, res) => {
     }
 }
 
+const getUserByName = async (req, res) => {
+    try{
+        const currentUser = await userService.getUserByName(req.params.name)
+        res.json(currentUser)
+    } 
+    catch (error) {
+        res.status(500).json({message: error.message})
+    }
+}
+
+
 const getAllUser = async (req, res) => {
     try{
          const userList = await user.find()
@@ -76,6 +87,7 @@ const deleteAllUser = async (req, res) => {
 module.exports = {
     createNewUser,
     getUserById,
+    getUserByName,
     getAllUser,
     updateUserById,
     deleteUserById,
