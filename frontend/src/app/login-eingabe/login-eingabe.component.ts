@@ -12,7 +12,7 @@ export class LoginEingabeComponent {
       document.getElementsByTagName('p')[0].innerHTML = "Something didn't work. Please try again.";
     }
     checkUser() {
-
+/* 
       var username = (<HTMLInputElement>document.getElementById('username')).value;
       var password = (<HTMLInputElement>document.getElementById('password')).value;
   
@@ -28,7 +28,7 @@ export class LoginEingabeComponent {
         console.log(data);
         this.user = data;
       })
-      document.location.href = "/menu";
+      document.location.href = "/menu"; */
     }
 }
 

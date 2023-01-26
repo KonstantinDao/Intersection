@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { User } from './User';
+import { User } from '../models/User';
 
 @Component({
   selector: 'app-signup-page',
@@ -38,8 +38,11 @@ export class SignupPageComponent {
     this.http.post(this.ROOT_URL + '/users', data).subscribe(data => {
       console.log(data);
       this.user = data;
+      console.log(`/menu/${this.user._id}`)
+      document.location.href = `/menu/${this.user._id}`;
+      
     })
-    document.location.href = "/menu";
+    // 
   }
 
 

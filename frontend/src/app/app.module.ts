@@ -26,17 +26,20 @@ import { ChatComponent } from './chat/chat.component';
 import { NatchingResultsComponent } from './natching-results/natching-results.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { WaitingRoomComponent } from './waiting-room/waiting-room.component';
 
 const meineRouten: Routes = [
   {path: '', component: LoginEingabeComponent},
   {path: 'signup', component: SignupPageComponent},
   {path: 'login', component: LoginEingabeComponent},
-  {path: 'menu', component: MenuComponent},
-  {path: 'createRoom', component: CreateRoomComponent},
-  {path: 'joinRoom', component: JoinRoomComponent},
-  {path: 'interests', component: InterestsComponent},
-  {path: 'matchingHistory', component: MatchingHistoryComponent},
-  {path: 'natchingresults', component: NatchingResultsComponent}
+  {path: 'menu/:id', component: MenuComponent},
+  {path: 'createRoom/:id', component: CreateRoomComponent},
+  {path: 'joinRoom/:id', component: JoinRoomComponent},
+  {path: 'interests/:id', component: InterestsComponent},
+  {path: 'matchingHistory/:id', component: MatchingHistoryComponent},
+  // TODO: rename
+  {path: 'matchingresults/:id', component: NatchingResultsComponent},
+  {path: 'waitingRoom/:id', component: WaitingRoomComponent}
 ]
 
 @NgModule({
@@ -52,6 +55,7 @@ const meineRouten: Routes = [
     InterestsComponent,
     ChatComponent,
     NatchingResultsComponent,
+    WaitingRoomComponent,
   ],
 
   imports: [
