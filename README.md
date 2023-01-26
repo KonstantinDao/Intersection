@@ -35,10 +35,10 @@
     - [x] special case leftover participants
 - [ ] connection with frontend
     - [x] waiting-room
-    - [ ] calculate matching button functionality 
-    - [ ] in backend update matchingHistory from all users ()
-    - [ ] show matching results (Anna)
-    - [ ] backend user name unique
+    - [x] calculate matching button functionality 
+    - [x] in backend update matchingHistory from all users ()
+    - [x] show matching results (Anna)
+    - [x] backend user name unique
 
 ### Low priority
 - [ ] fix bug: if more then two matchings are in db and method deleteAllMatching is called, then error appear in console 

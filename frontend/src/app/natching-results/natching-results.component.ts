@@ -36,14 +36,23 @@ export class NatchingResultsComponent {
 
   return this.http.get<User>(this.ROOT_URL + `/users/${this.id}`).subscribe(user => {
     this.user = user;
+    document.getElementsByTagName('p')[0].innerHTML = "You (" + user.name + ") are matched with:";
     const matching = this.user.matchingHistory.pop();
     this.http.get<Matching>(this.ROOT_URL + `/matchings/${matching}`).subscribe(matching =>{
       this.matching = matching;
       const partners = this.matching.partners
       if(partners[0] != this.id){
         this.http.get<User>(this.ROOT_URL + `/users/${partners[0]}`).subscribe(user => {
-          this.partner1 = user.name;
-          document.getElementsByTagName('p')[1].innerHTML = this.partner1;          
+          if(this.partner1 == ''){
+            this.partner1 = user.name;
+            document.getElementsByTagName('p')[1].innerHTML = this.partner1;
+          } else if(this.partner2 == ''){
+            this.partner2 = user.name;
+            document.getElementsByTagName('p')[2].innerHTML = this.partner2;
+          } else{
+            this.partner3 = user.name;
+            document.getElementsByTagName('p')[3].innerHTML = this.partner3;
+          }        
         })
       }
       if(partners[1] != this.id){
@@ -51,10 +60,13 @@ export class NatchingResultsComponent {
           if(this.partner1 == ''){
             this.partner1 = user.name;
             document.getElementsByTagName('p')[1].innerHTML = this.partner1;
-          } else {
+          } else if(this.partner2 == ''){
             this.partner2 = user.name;
             document.getElementsByTagName('p')[2].innerHTML = this.partner2;
-          } 
+          } else{
+            this.partner3 = user.name;
+            document.getElementsByTagName('p')[3].innerHTML = this.partner3;
+          }
         })
       }
       if(partners[2] != this.id){
@@ -86,7 +98,6 @@ export class NatchingResultsComponent {
           }
         })
       }
-
     })
   });
 
