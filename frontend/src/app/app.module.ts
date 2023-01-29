@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,25 +19,29 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { RouterModule, Routes } from "@angular/router";
 import { MenuComponent } from './menu/menu.component';
 import { CreateRoomComponent } from './create-room/create-room.component';
-import { RoomComponent } from './room/room.component';
 import { JoinRoomComponent } from './join-room/join-room.component';
 import { InterestsComponent } from './interests/interests.component';
 import { MatchingHistoryComponent } from './matching-history/matching-history.component';
 import { ChatComponent } from './chat/chat.component';
 import { NatchingResultsComponent } from './natching-results/natching-results.component';
-import { SignupEingabeComponent } from './signup-eingabe/signup-eingabe.component';
 import {MatChipsModule} from '@angular/material/chips';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { WaitingRoomComponent } from './waiting-room/waiting-room.component';
+import { CalculateMatchingComponent } from './calculate-matching/calculate-matching.component';
 
 const meineRouten: Routes = [
   {path: '', component: LoginEingabeComponent},
   {path: 'signup', component: SignupPageComponent},
   {path: 'login', component: LoginEingabeComponent},
-  {path: 'menu', component: MenuComponent},
+  {path: 'menu/:id', component: MenuComponent},
   {path: 'createRoom', component: CreateRoomComponent},
-  {path: 'joinRoom', component: JoinRoomComponent},
-  {path: 'interests', component: InterestsComponent},
-  {path: 'matchingHistory', component: MatchingHistoryComponent},
-  {path: 'room', component: RoomComponent}
+  {path: 'joinRoom/:id', component: JoinRoomComponent},
+  {path: 'interests/:id', component: InterestsComponent},
+  {path: 'matchingHistory/:id', component: MatchingHistoryComponent},
+  // TODO: rename
+  {path: 'matchingresults/:id', component: NatchingResultsComponent},
+  {path: 'waitingRoom/:id', component: WaitingRoomComponent},
+  {path: 'calculateMatching/:roomId', component: CalculateMatchingComponent}
 ]
 
 @NgModule({
@@ -49,12 +53,12 @@ const meineRouten: Routes = [
     SignupPageComponent,
     MenuComponent,
     CreateRoomComponent,
-    RoomComponent,
     JoinRoomComponent,
     InterestsComponent,
     ChatComponent,
     NatchingResultsComponent,
-    SignupEingabeComponent,  
+    WaitingRoomComponent,
+    CalculateMatchingComponent,
   ],
 
   imports: [
@@ -62,6 +66,8 @@ const meineRouten: Routes = [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
     MatFormFieldModule,
     MatSlideToggleModule,
     MatInputModule,
@@ -70,6 +76,7 @@ const meineRouten: Routes = [
     MatRadioModule,
     MatCardModule,
     MatChipsModule,
+    FormsModule, ReactiveFormsModule,
 
 //    ReactiveFormsModule
 ],

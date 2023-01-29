@@ -33,8 +33,12 @@
     - [x] get interests object for each user in room and add to array
     - [x] call bestMatchForUser algorithm for each group of three
     - [x] special case leftover participants
-- [ ] api testing for room endpoint
 - [ ] connection with frontend
+    - [x] waiting-room
+    - [x] calculate matching button functionality 
+    - [x] in backend update matchingHistory from all users ()
+    - [x] show matching results (Anna)
+    - [x] backend user name unique
 
 ### Low priority
 - [ ] fix bug: if more then two matchings are in db and method deleteAllMatching is called, then error appear in console 
@@ -43,3 +47,4 @@
 - [ ] refactor functions to align with conventions
 - [x] refactor routes for better readability
 - [ ] implement getAllRoomsByUserId(id)
+- [ ] room_nr should be unique and generated from backend

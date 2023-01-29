@@ -31,6 +31,17 @@ const getRoomById = async (req, res) => {
    }
 }
 
+const getRoomByNumber = async (req, res) => {
+    try{
+        const currentRoom = await roomService.getRoomByNumber(req.params.room_nr);
+        res.status(200).json(currentRoom)
+   } catch (error) {
+       res.status(500).json({message: error.message})
+   }
+}
+
+
+
 const getAllRoomsByUserId = async (req, res) => {
     try {
         const RoomsWithUserAsParticipant = roomService.getAllRoomsByUserId(req.params.userId)
@@ -74,7 +85,7 @@ const deleteAllRooms = async (req, res) => {
 const calculateMatchings = async (req, res) => {
     try{
         const listOfMatchings = await roomService.calculateMatchings(req.params.id);
-        res.status(200).json(listOfMatchings)
+        res.status(200).json(true)
     } catch(error){
         res.status(500).json({message: error.message})
     }
@@ -83,6 +94,7 @@ const calculateMatchings = async (req, res) => {
 module.exports = {
     createNewRoom,
     getRoomById,
+    getRoomByNumber,
     getAllRoomsByUserId,
     updateRoomById,
     deleteRoomById,

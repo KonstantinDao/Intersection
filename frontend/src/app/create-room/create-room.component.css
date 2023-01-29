@@ -27,3 +27,15 @@ section {
     justify-content: center;
     width: 120px;
   }
+
+  #p1 {
+    font-size : 30px;
+   margin-top : 40px;
+   font-weight : 400;
+  }
+
+  #p2 {
+    font-size : 30px;
+   /* margin-top : 10px;*/
+   font-weight : 400;
+  }

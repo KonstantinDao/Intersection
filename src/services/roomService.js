@@ -19,6 +19,13 @@ const getRoomById = async (pId) => {
     return currentRoom;
 }
 
+const getRoomByNumber = async (pRoomNr) => {
+    return await room.findOne({room_nr: pRoomNr});
+
+}
+
+
+
 const updateRoomById = async (pId, pUpdatedData) => {
     const id = pId;
     const updatedData = pUpdatedData;
@@ -106,6 +113,7 @@ const calculateMatchings = async (pId) => {
         });
         console.log(await matchingService.createNewMatching(matchingData));
 
+        
         userList = arrayRemove(userList, result[0])
         userList = arrayRemove(userList, result[1])
     }
@@ -114,6 +122,7 @@ const calculateMatchings = async (pId) => {
 module.exports = {
     createNewRoom,
     getRoomById,
+    getRoomByNumber,
     updateRoomById,
     deleteRoomById,
     deleteAllRooms,
