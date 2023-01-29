@@ -4,6 +4,11 @@
 ## Only at the beginning
 - git clone 'HTTPSURL' // create repo in current folder, for url look on gitlab repo
 
+## Start whole app
+- make sure your IP-Adress is added to ip access list from mongoDB Atlas
+- go to "./backend/" and run "npm run autoStart"
+- go to "./frontend/" and run "npm run ng serve -o"
+
 ## Routine in cli after code changes were made
 - git checkout main // newest changes on main
 - git pull // get newest changes on local machine
@@ -71,6 +76,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - [x] joinRoom button functionality (Anna, Konstantin)
     - [x] login and signin buttons functionality (Anna, Felipe, Konstantin)
     - [x] send interest to backend (Felipe, Konstantin)
+- [ ] application deploy on server
 
 
 ### Low priority
