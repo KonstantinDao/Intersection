@@ -89,16 +89,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [x] record video
     - [x] brainstorm (Anna, Felipe, Konstantin, Mika)
     - [x] film video (Mika, Konstantin)
-
 - [ ] application deploy on server
 
 
 ### Low priority
 - [ ] fix bug: if more then two matchings are in db and method deleteAllMatching is called, then error appear in console 
-    - [ ] use pre hook for dependencies
-- [x] refactoring: declare service classes for user and matching endpoint
-- [ ] refactor functions to align with conventions
-- [x] refactor routes for better readability
-- [ ] implement getAllRoomsByUserId(id)
+    - [ ] use pre hook for dependencies like updating matchingHistory of user after creating a new matching
+- [x] refactoring: declare service classes for user and matching endpoint (Konstantin)
+- [x] refactor routes for better readability (Konstantin)
+- [ ] implement getAllRoomsByUserId(id) in the backend
 - [ ] room_nr should be unique and generated from backend
 - [ ] icon in tab
+- [ ] chat or number give number to all matching partners, so that matching group can communicate via other messengers
+- [ ] mobile app instead of browser website
