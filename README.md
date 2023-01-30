@@ -70,12 +70,26 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - [x] calculate matching button functionality (Felipe, Konstantin)
     - [x] in backend update matchingHistory from all users (Felipe, Konstantin)
     - [x] refresh waitingRoom after calculateMatching (Konstantin)
-    - [x] show matching results (Anna, Felipe, Konstantin)
+    - [x] show matching results (Anna, Felipe, Konstantin, Mika)
     - [x] backend user name unique (Konstantin)
     - [x] createRoom button functionality (Anna, Konstantin)
     - [x] joinRoom button functionality (Anna, Konstantin)
     - [x] login and signin buttons functionality (Anna, Felipe, Konstantin)
     - [x] send interest to backend (Felipe, Konstantin)
+- [x] implement frontend
+    - [x] setup angular + create components (Anna, Mika)
+    - [x] login/signup input fields and button (Anna, Mika)
+    - [x] create and design other pages (Anna, Mika)
+    - [x] header (Anna)
+    - [x] bootstrap (Mika)
+    - [x] customized color theme (Anna)
+    - [x] connect pages with routerLink (Anna)
+    - [x] select interests with chips (Mika)
+    - [x] generate room-Nr (Anna)
+- [x] record video
+    - [x] brainstorm (Anna, Felipe, Konstantin, Mika)
+    - [x] film video (Mika, Konstantin)
+
 - [ ] application deploy on server
 
 
