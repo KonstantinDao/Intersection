@@ -1,13 +1,14 @@
+# Start whole app
+- make sure your IP-Adress is added to ip access list from mongoDB Atlas
+- go to "./backend/" and run "npm run autoStart"
+- go to "./frontend/" and run "npm run ng serve"
+- open webpage with http://localhost:4200/ in the browser
+
 # Git helpful knowledge
 - use github desktop to have GUI or CLI (command-line interface)
 
 ## Only at the beginning
 - git clone 'HTTPSURL' // create repo in current folder, for url look on gitlab repo
-
-## Start whole app
-- make sure your IP-Adress is added to ip access list from mongoDB Atlas
-- go to "./backend/" and run "npm run autoStart"
-- go to "./frontend/" and run "npm run ng serve -o"
 
 ## Routine in cli after code changes were made
 - git checkout main // newest changes on main
@@ -17,6 +18,7 @@
 - git branch 'newBranchName' // create new branch
 - git checkout 'newBranchName' // change branch
 - git push --set-upstream origin 'newBranchName' // create new branch on remote repo and push to remote repo
+- on git.rwth-aachen.de create a merge request
 
 # Frontend
 
