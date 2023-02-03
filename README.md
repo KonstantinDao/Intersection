@@ -1,5 +1,6 @@
 # Start whole app
 - make sure your IP-Adress is added to ip access list from mongoDB Atlas
+- open mongoDB Compass and setup connection with "mongodb+srv://Gruppe36:xcvttbs6f@cluster0.kszhdbb.mongodb.net/test"
 - go to "./backend/" and run "npm run autoStart"
 - go to "./frontend/" and run "npm run ng serve"
 - open webpage with http://localhost:4200/ in the browser
