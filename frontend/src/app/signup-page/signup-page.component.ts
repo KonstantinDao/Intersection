@@ -18,10 +18,6 @@ export class SignupPageComponent {
 
   constructor(private http: HttpClient) {}
 
-  getUsers() {
-    this.users = this.http.get<User[]>(this.ROOT_URL + '/users');
-  }
-
   createUser() {
 
     var username = (<HTMLInputElement>document.getElementById('username')).value;

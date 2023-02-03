@@ -7,9 +7,8 @@
           <p>Enter your username and password to access your account</p>
           <input class="form-control" color="warn" type="text" placeholder="username" id="username">
           <input class="form-control" color="primary" type="password" placeholder="password" id="password">
-          <button mat-raised-button color="primary" type="button" (click)="checkUser()" onclick="username = document.getElementById('username').value;">Login</button>
+          <button mat-raised-button color="primary" type="button" (click)="checkUser()">Login</button>
 
-          <login-button></login-button>   
           <h2> Don't have an account?
             <a routerLink="/signup">Sign Up</a>
           </h2>       

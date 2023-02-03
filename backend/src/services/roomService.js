@@ -82,7 +82,7 @@ const calculateMatchings = async (pId) => {
 
     // matching algorithm
     for(const user of userList){
-        // remaining userList smaller then 2
+        // remaining userList smaller then 4
         if (userList.length <= 4) {
             const matches = [];
             for(const u of userList){

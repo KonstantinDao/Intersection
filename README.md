@@ -82,3 +82,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [ ] implement getAllRoomsByUserId(id)
 - [ ] room_nr should be unique and generated from backend
 - [ ] icon in tab
+- [ ] show participants nr for room creator

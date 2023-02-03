@@ -8,7 +8,6 @@ import { HeaderComponent } from './header/header.component';
 import { LoginEingabeComponent } from './login-eingabe/login-eingabe.component';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { LoginButtonComponent } from './login-eingabe/login-button/login-button.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
@@ -49,7 +48,6 @@ const meineRouten: Routes = [
     AppComponent,
     HeaderComponent,
     LoginEingabeComponent,
-    LoginButtonComponent,
     SignupPageComponent,
     MenuComponent,
     CreateRoomComponent,
