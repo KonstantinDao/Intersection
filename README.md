@@ -4,6 +4,11 @@
 ## Only at the beginning
 - git clone 'HTTPSURL' // create repo in current folder, for url look on gitlab repo
 
+## Start whole app
+- make sure your IP-Adress is added to ip access list from mongoDB Atlas
+- go to "./backend/" and run "npm run autoStart"
+- go to "./frontend/" and run "npm run ng serve -o"
+
 ## Routine in cli after code changes were made
 - git checkout main // newest changes on main
 - git pull // get newest changes on local machine
@@ -65,21 +70,36 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - [x] calculate matching button functionality (Felipe, Konstantin)
     - [x] in backend update matchingHistory from all users (Felipe, Konstantin)
     - [x] refresh waitingRoom after calculateMatching (Konstantin)
-    - [x] show matching results (Anna, Felipe, Konstantin)
+    - [x] show matching results (Anna, Felipe, Konstantin, Mika)
     - [x] backend user name unique (Konstantin)
     - [x] createRoom button functionality (Anna, Konstantin)
     - [x] joinRoom button functionality (Anna, Konstantin)
     - [x] login and signin buttons functionality (Anna, Felipe, Konstantin)
     - [x] send interest to backend (Felipe, Konstantin)
+- [x] implement frontend
+    - [x] setup angular + create components (Anna, Mika)
+    - [x] login/signup input fields and button (Anna, Mika)
+    - [x] create and design other pages (Anna, Mika)
+    - [x] header (Anna)
+    - [x] bootstrap (Mika)
+    - [x] customized color theme (Anna)
+    - [x] connect pages with routerLink (Anna)
+    - [x] select interests with chips (Mika)
+    - [x] generate room-Nr (Anna)
+- [x] record video
+    - [x] brainstorm (Anna, Felipe, Konstantin, Mika)
+    - [x] film video (Mika, Konstantin)
+- [ ] application deploy on server
 
 
 ### Low priority
 - [ ] fix bug: if more then two matchings are in db and method deleteAllMatching is called, then error appear in console 
-    - [ ] use pre hook for dependencies
-- [x] refactoring: declare service classes for user and matching endpoint
-- [ ] refactor functions to align with conventions
-- [x] refactor routes for better readability
-- [ ] implement getAllRoomsByUserId(id)
+    - [ ] use pre hook for dependencies like updating matchingHistory of user after creating a new matching
+- [x] refactoring: declare service classes for user and matching endpoint (Konstantin)
+- [x] refactor routes for better readability (Konstantin)
+- [ ] implement getAllRoomsByUserId(id) in the backend
 - [ ] room_nr should be unique and generated from backend
 - [ ] icon in tab
 - [ ] show participants nr for room creator
+- [ ] chat or number give number to all matching partners, so that matching group can communicate via other messengers
+- [ ] mobile app additionaly to browser website
