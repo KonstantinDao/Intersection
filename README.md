@@ -97,9 +97,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - [ ] use pre hook for dependencies like updating matchingHistory of user after creating a new matching
 - [x] refactoring: declare service classes for user and matching endpoint (Konstantin)
 - [x] refactor routes for better readability (Konstantin)
-- [ ] implement getAllRoomsByUserId(id) in the backend
 - [ ] room_nr should be unique and generated from backend
 - [ ] icon in tab
 - [ ] show participants nr for room creator
 - [ ] chat or number give number to all matching partners, so that matching group can communicate via other messengers
 - [ ] mobile app additionaly to browser website
+- [ ] more validation in frontend
+- [ ] leave room as a user
+- [ ] after calculateMatching delete room or block joining to this room
