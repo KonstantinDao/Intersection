@@ -30,15 +30,15 @@ export class LoginEingabeComponent {
 
 
   inputError(pCause : String){
-
     if(pCause === "username"){
       document.getElementsByTagName('p')[0].innerHTML = "User does not exist. Please try again.";
     } else if(pCause === "password"){
       document.getElementsByTagName('p')[0].innerHTML = "Password is incorrect. Please try again.";
-    }else{
+    } else if(pCause === "empty"){
+      document.getElementsByTagName('p')[0].innerHTML = "Input field is empty.";
+    } else {
       document.getElementsByTagName('p')[0].innerHTML = "Something didn't work. Please try again.";
     }
-    
   }
   
   checkUser() {
@@ -46,19 +46,24 @@ export class LoginEingabeComponent {
     var username = (<HTMLInputElement>document.getElementById('username')).value;
     var password = (<HTMLInputElement>document.getElementById('password')).value;
 
-    return this.http.get<User>(this.ROOT_URL + `/usersByName/${username}`).subscribe(user => {
-      if(user != null && user.name === username){
-          if(user.password === password){
-            this.user = user;
-            console.log(this.user._id)
-            document.location.href = `/menu/${this.user._id}`;
-           } else {
-             this.inputError("password");
-           }
-        } else {
-          this.inputError("username");
-        }
-    });
+    if (username === '' || password === '' ){
+      this.inputError("empty")
+      return null;
+    } else{
+      return this.http.get<User>(this.ROOT_URL + `/usersByName/${username}`).subscribe(user => {
+        if(user != null && user.name === username){
+            if(user.password === password){
+              this.user = user;
+              console.log(this.user._id)
+              document.location.href = `/menu/${this.user._id}`;
+            } else {
+              this.inputError("password");
+            }
+          } else {
+            this.inputError("username");
+          }
+      });
+    }
   } 
 
   
